@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+		<meta charset="utf-8">
+		<title>React Demo4-PropTypes属性</title>
+		<script src="../build/react.js"></script>
+		<script src="../build/react-dom.js"></script>
+		<script src="../build/browser.min.js"></script>
+	</head>
+
+	<!-- 
+	Demo4:
+	propTypes属性：用来验证组件实例的属性是否符合要求，本例中，要求组件必须有一个age属性，且属性的值必须为number型，否则会报错；
+	getDefaultProps属性：用来设置组件属性的默认值。
+	-->
+
+	<body>
+		<div id="example4"></div>
+	</body>
+	<script type="text/babel">
+		var data = 23;
+		var Mytitle = React.createClass({
+			getDefaultProps: function(){
+				return {
+					name: 'Amber'
+				}
+			},
+
+			propTypes: {
+				age: React.PropTypes.number.isRequired
+			},
+			
+			render: function(){
+				return <h1>{this.props.name}:{this.props.age}</h1>
+			}
+		});
+
+		ReactDOM.render(
+			<Mytitle age={data}/>,
+			document.getElementById('example4')
+		)
+	</script>
+</html>
