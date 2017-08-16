@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="uft-8">
+		<title>react Domo2：React组件开发</title>
+		<script src="../build/react.js"></script>
+		<script src="../build/react-dom.js"></script>
+		<script src="../build/browser.min.js"></script>
+		<!-- <script src="../build/JSXTransformer.js"></script> -->
+	</head>
+	<body>
+		<div id="example2"></div>
+		<script type="text/babel">
+			var HelloMessage = React.createClass({
+				render: function(){
+					return <h1>Hello, this is {this.props.name}</h1>
+				}
+			});
+			
+			ReactDOM.render(
+				<HelloMessage name="Amber"/>,
+				document.getElementById('example2')
+			)
+		</script>
+	</body>
+</html>
