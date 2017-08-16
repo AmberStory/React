@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>react-Demo1：React数组实例</title>
+		<script src="../build/react.js"></script>
+		<script src="../build/react-dom.js"></script>
+		<script src="../build/browser.min.js"></script>
+		<!-- <script src="../build/JSXTransformer.js"></script> -->
+	</head>
+	<body>
+		<div id="example"></div>
+	</body>
+	<script type="text/babel">
+		var arr = [<h1 key="1">七里香</h1>, <h2 key="2">夜曲</h2>, <h3 key="3">听妈妈的话</h3>];
+
+		ReactDOM.render(
+			<div>{	arr	}</div>,
+			document.getElementById('example')
+		 );
+	</script>
+</html>
