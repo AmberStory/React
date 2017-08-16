@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>React Demo5-initialState</title>
+	<script src="../build/react.js"></script>
+	<script src="../build/react-dom.js"></script>
+	<script src="../build/browser.min.js"></script>
+</head>
+<body>
+	<div id="example5"></div>
+</body>
+<script type="text/babel">
+	var ToggleButton = React.createClass({
+		getInitialState: function(){
+			return { liked: false }
+		},
+		handleClick: function(){
+			this.setState({liked: !this.state.liked})
+		},
+		render: function(){
+			
+			var text = this.state.liked ? 'like' : 'don\'t like';
+			return(
+				<p onClick = {this.handleClick} style={{fontSize: '1cm',cursor:'pointer'}}>
+					You {text} this.Click to toggle.
+				</p>
+			)
+		}
+	})
+
+	ReactDOM.render(
+		<ToggleButton/>,
+		document.getElementById('example5')
+	)
+</script>
+</html>
